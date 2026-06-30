@@ -1,11 +1,4 @@
-:root {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --primary-color: #2da44e; /* Verde estilo GitHub/Farming */
-    --text-color: #e1e1e1;
-    --text-muted: #8b949e;
-}
-
+/* Configurações Gerais */
 * {
     margin: 0;
     padding: 0;
@@ -14,163 +7,191 @@
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
+/* Navbar */
 header {
-    background-color: #161b22;
-    padding: 20px 0;
-    border-bottom: 1px solid #30363d;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 3px solid #4caf50;
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-h1 {
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
     color: #fff;
-    font-size: 1.8rem;
 }
 
-#searchBar {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px 15px;
-    border-radius: 6px;
-    border: 1px solid #30363d;
-    background-color: var(--bg-color);
-    color: #fff;
-    font-size: 1rem;
+header .logo span {
+    color: #4caf50;
 }
 
-#searchBar:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.filters {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.filter-btn {
-    background-color: #21262d;
-    color: var(--text-color);
-    border: 1px solid #30363d;
+nav .filter-btn {
+    background: transparent;
+    border: 1px solid #4caf50;
+    color: #4caf50;
     padding: 8px 16px;
-    border-radius: 6px;
+    margin-left: 5px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background-color: var(--primary-color);
+nav .filter-btn:hover, nav .filter-btn.active {
+    background-color: #4caf50;
     color: #fff;
-    border-color: var(--primary-color);
 }
 
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Grid de Mods (Index Style) */
 .container {
     max-width: 1200px;
-    width: 100%;
-    margin: 30px auto;
+    margin: 40px auto;
     padding: 0 20px;
-    flex: 1;
 }
 
-/* Grid estilo Index/Catálogo */
 .mods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
+/* Card do Mod */
 .mod-card {
-    background-color: var(--card-bg);
+    background-color: #1e1e1e;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #30363d;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
 }
 
 .mod-card:hover {
     transform: translateY(-5px);
 }
 
-.mod-image {
+.mod-img-container {
+    position: relative;
     width: 100%;
-    height: 180px;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mod-img-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    background-color: #2b2b2b;
+    transition: transform 0.3s;
+}
+
+.mod-img-container img:hover {
+    transform: scale(1.05);
+}
+
+.game-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
 }
 
 .mod-info {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-1: 1;
-    gap: 10px;
+    padding: 20px;
 }
 
-.mod-badge {
-    align-self: flex-start;
-    background-color: #31363c;
-    color: #58a6ff;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-.mod-title {
-    font-size: 1.2rem;
+.mod-info h3 {
+    margin-bottom: 10px;
     color: #fff;
 }
 
-.mod-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.4;
+.mod-info p {
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
 .download-btn {
-    margin-top: auto;
-    display: block;
-    text-align: center;
-    background-color: var(--primary-color);
-    color: #fff;
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: bold;
-    transition: background-color 0.2s;
+    text-align: center;
+    width: 100%;
+    transition: 0.2s;
 }
 
 .download-btn:hover {
-    background-color: #238636;
+    background-color: #45a049;
 }
 
-footer {
-    background-color: #161b22;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    border-top: 1px solid #30363d;
+/* Modal de Imagem (Lightbox) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 4px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav .filter-btn {
+        margin: 2px;
+        font-size: 12px;
+    }
 }
