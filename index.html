@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FS Mods & DLCs Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>🚜 FS Mods Index</h1>
+            <input type="text" id="searchBar" placeholder="Pesquisar mod ou DLC...">
+            
+            <nav class="filters">
+                <button class="filter-btn active" data-version="all">Todos</button>
+                <button class="filter-btn" data-version="FS25">FS 25</button>
+                <button class="filter-btn" data-version="FS22">FS 22</button>
+                <button class="filter-btn" data-version="FS19">FS 19</button>
+                <button class="filter-btn" data-version="FS17">FS 17</button>
+                <button class="filter-btn" data-version="FS15">FS 15</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="mods-grid" id="modsGrid"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FS Mods Hub - Todos os direitos reservados aos criadores dos mods.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
